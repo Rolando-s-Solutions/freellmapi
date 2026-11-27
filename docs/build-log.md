@@ -25,3 +25,9 @@ Baseline: tsc ✔ · tests 5 passed / 0 failed
 - Checks: tsc ✔ test ✔ (19 passed, ~130 ms)
 - Deviation: all seven tasks rewrite the same module (src/provider.ts), so they were test-driven together (12 red → 19 green) and committed as one commit listing every task ID instead of one commit per task.
 - Commit: `fix(provider): OpenAI-compliant messages, tool guard and resilient parsing [T-03][T-04][T-05][T-06][T-07][T-08][T-09]`
+
+### T-10 Version bump, docs and package build — DONE
+- Files: package.json, package-lock.json (0.1.2), README.md (URLs + per-model tool support), .vscodeignore (+`docs/**`, `*.vsix`)
+- Review: Spec ✅ · Code quality ✅ — the package now contains only manifest, readme and out/*.js (7 files, 11.38 KB)
+- Checks: tsc ✔ test ✔ (19 passed) · `make vsix` ✔ → freellmapi-vscode-0.1.2.vsix
+- Commit: `chore(release): 0.1.2 with docs and packaging excludes [T-10]`

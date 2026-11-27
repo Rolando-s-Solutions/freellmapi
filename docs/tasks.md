@@ -71,7 +71,7 @@ Base commit: none
   - Consumes: `application/json` `chat.completion` object (spec §6)
   - Done when: tests prove `message.content`, `message.reasoning` (fallback) and `message.tool_calls` are reported from a JSON response.
 
-- [ ] T-10 Version bump, docs and package build
+- [x] T-10 Version bump, docs and package build
   - Target: packaging
   - Depends on: T-01, T-02, T-03, T-04, T-05, T-06, T-07, T-08, T-09
   - Covers: NFR-2, NFR-3

@@ -2,7 +2,7 @@
   "name": "freellmapi-vscode",
   "displayName": "FreeLLMAPI",
   "description": "Use FreeLLMAPI models in VS Code Chat and agent mode.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "rolando-s-solutions",
   "license": "MIT",
   "engines": {
