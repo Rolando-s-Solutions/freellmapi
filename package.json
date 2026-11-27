@@ -2,7 +2,7 @@
   "name": "freellmapi-vscode",
   "displayName": "FreeLLMAPI for VS Code",
   "description": "Bring FreeLLMAPI's model router (auto, fusion, 70+ open models) into VS Code Chat & Agent mode — zero config, secure API-key storage, streaming, and full tool calling support.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "publisher": "rolando-s-solutions",
   "license": "MIT",
   "engines": {
