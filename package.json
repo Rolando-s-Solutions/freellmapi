@@ -1,0 +1,56 @@
+{
+  "name": "freellmapi-vscode",
+  "displayName": "FreeLLMAPI",
+  "description": "Use FreeLLMAPI models in VS Code Chat and agent mode.",
+  "version": "0.1.1",
+  "publisher": "rolando-s-solutions",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "activationEvents": [
+    "onCommand:freellmapi.configure",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languageModelChatProviders": [
+      {
+        "vendor": "freellmapi",
+        "displayName": "FreeLLMAPI",
+        "managementCommand": "freellmapi.configure"
+      }
+    ],
+    "commands": [
+      {
+        "command": "freellmapi.configure",
+        "title": "FreeLLMAPI: Configure Connection"
+      }
+    ],
+    "configuration": {
+      "title": "FreeLLMAPI",
+      "properties": {
+        "freellmapi.baseUrl": {
+          "type": "string",
+          "default": "http://localhost:3001/v1",
+          "description": "FreeLLMAPI OpenAI-compatible API base URL. Use /v1 for local server installs or the desktop app URL."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc --watch -p .",
+    "test": "npm run compile && node --test test/*.test.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/vscode": "^1.104.0",
+    "typescript": "^5.9.2"
+  }
+}
