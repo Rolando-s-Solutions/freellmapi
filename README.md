@@ -3,8 +3,8 @@
 [![Version](https://img.shields.io/visual-studio-marketplace/v/rolando-s-solutions.freellmapi-vscode)](https://marketplace.visualstudio.com/items?itemName=rolando-s-solutions.freellmapi-vscode)
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/rolando-s-solutions.freellmapi-vscode)](https://marketplace.visualstudio.com/items?itemName=rolando-s-solutions.freellmapi-vscode)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/rolando-s-solutions.freellmapi-vscode)](https://marketplace.visualstudio.com/items?itemName=rolando-s-solutions.freellmapi-vscode)
-[![License](https://img.shields.io/github/license/rolandossolutions/freellmapi)](LICENSE)
-[![Build](https://github.com/rolandossolutions/freellmapi/actions/workflows/ci.yml/badge.svg)](https://github.com/rolandossolutions/freellmapi/actions)
+[![License](https://img.shields.io/github/license/Rolando-s-Solutions/freellmapi)](LICENSE)
+[![Build](https://github.com/Rolando-s-Solutions/freellmapi/actions/workflows/ci.yml/badge.svg)](https://github.com/Rolando-s-Solutions/freellmapi/actions)
 
 Bring **FreeLLMAPI's model router (auto, fusion, 70+ open models)** into **VS Code Chat & Agent mode** — zero config, secure API-key storage, streaming, and full tool calling support.
 
