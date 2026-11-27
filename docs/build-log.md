@@ -31,3 +31,9 @@ Baseline: tsc ✔ · tests 5 passed / 0 failed
 - Review: Spec ✅ · Code quality ✅ — the package now contains only manifest, readme and out/*.js (7 files, 11.38 KB)
 - Checks: tsc ✔ test ✔ (19 passed) · `make vsix` ✔ → freellmapi-vscode-0.1.2.vsix
 - Commit: `chore(release): 0.1.2 with docs and packaging excludes [T-10]`
+
+### Final verification
+- Clean rebuild (`rm -rf out && npm run compile`) ✔ · tsc --noEmit ✔ · test ✔ (19 passed, 0 failed) · make vsix ✔
+- All tasks T-01…T-10 are [x]; AC-1…AC-6 each covered by at least one passing test
+
+Status: BUILD PASSED
