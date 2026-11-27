@@ -16,3 +16,12 @@ Baseline: tsc ✔ · tests 5 passed / 0 failed
 - Review: Spec ✅ · Code quality ✅
 - Checks: tsc ✔ test ✔ (7 passed)
 - Commit: shared with T-01 (both tasks edit src/apiUtils.ts) — `fix(models): default to desktop URL and derive tool support [T-01][T-02]`
+
+### T-03 … T-09 Provider protocol fixes — DONE
+- Files: src/provider.ts, test/provider.test.cjs
+- New exports: `buildRequestBody` (T-03), `convertMessages(messages, { toolCalling })` (T-04…T-07), `parseEventStream` (T-08), `parseJsonCompletion` (T-09); shared `ResponseAccumulator` for SSE + JSON.
+- Tests (14 in provider.test.cjs): tools guard (AC-2); JSON/+json/prompt-tsx/unknown parts + name sanitization, empty-name drop, system role (AC-5); role:'tool' ordering (AC-3); non-tool degradation + orphan tool results (AC-4); SSE comments/choice-less/usage/[DONE], reasoning fallback, streamed tool-call assembly, error payloads, JSON completion content/tool_calls/reasoning/error (AC-6).
+- Review: Spec ✅ (AC-2…AC-6) · Code quality ✅ (one accumulator, type-guarded field access, no new deps)
+- Checks: tsc ✔ test ✔ (19 passed, ~130 ms)
+- Deviation: all seven tasks rewrite the same module (src/provider.ts), so they were test-driven together (12 red → 19 green) and committed as one commit listing every task ID instead of one commit per task.
+- Commit: `fix(provider): OpenAI-compliant messages, tool guard and resilient parsing [T-03][T-04][T-05][T-06][T-07][T-08][T-09]`
