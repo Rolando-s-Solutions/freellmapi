@@ -3,14 +3,14 @@ Spec: docs/spec.md (Revision 1)
 Base commit: none
 
 ## Task list
-- [ ] T-01 Default base URL → `http://127.0.0.1:31415/v1`
+- [x] T-01 Default base URL → `http://127.0.0.1:31415/v1`
   - Target: extension config
   - Depends on: —
   - Covers: FR-1, AC-1
   - Files: package.json, src/extension.ts, src/provider.ts, README.md, test/apiUtils.test.cjs
   - Done when: all defaults, input-box placeholders and README examples use `http://127.0.0.1:31415/v1`; a test asserts the exported default constant.
 
-- [ ] T-02 Derive `toolCalling` from `supported_parameters`
+- [x] T-02 Derive `toolCalling` from `supported_parameters`
   - Target: src/apiUtils.ts
   - Depends on: —
   - Covers: FR-2, AC-2

@@ -1,3 +1,8 @@
+export const DEFAULT_BASE_URL = 'http://127.0.0.1:31415/v1';
+
+/** Router model that synthesizes one text answer from a panel of models; it does not emit tool calls. */
+const NON_TOOL_ROUTER_IDS = new Set(['fusion']);
+
 export interface FreeLLMModel {
 	id: string;
 	name: string;
@@ -23,6 +28,7 @@ interface ModelRecord {
 	max_output_tokens?: unknown;
 	input_modalities?: unknown;
 	supports_vision?: unknown;
+	supported_parameters?: unknown;
 }
 
 export function normalizeBaseUrl(value: string): string {
@@ -74,13 +80,27 @@ export function parseModelList(payload: unknown): FreeLLMModel[] {
 				128_000,
 			maxOutputTokens: positiveNumber(model.max_output_tokens) ?? 8_192,
 			capabilities: {
-				toolCalling: true,
+				toolCalling: supportsToolCalling(id, model.supported_parameters),
 				imageInput
 			}
 		});
 	}
 
 	return [...models.values()];
+}
+
+/**
+ * Router slots (auto, claude-*-4-5) omit supported_parameters and route tool requests to
+ * tool-capable models; concrete models declare support explicitly via supported_parameters.
+ */
+function supportsToolCalling(id: string, supportedParameters: unknown): boolean {
+	if (NON_TOOL_ROUTER_IDS.has(id)) {
+		return false;
+	}
+	if (Array.isArray(supportedParameters)) {
+		return supportedParameters.includes('tools');
+	}
+	return true;
 }
 
 export function errorMessageFromResponse(status: number, body: string, apiKey: string): string {

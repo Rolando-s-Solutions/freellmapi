@@ -36,7 +36,7 @@
       "properties": {
         "freellmapi.baseUrl": {
           "type": "string",
-          "default": "http://localhost:3001/v1",
+          "default": "http://127.0.0.1:31415/v1",
           "description": "FreeLLMAPI OpenAI-compatible API base URL. Use /v1 for local server installs or the desktop app URL."
         }
       }

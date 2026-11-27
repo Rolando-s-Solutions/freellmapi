@@ -1,8 +1,7 @@
 import * as vscode from 'vscode';
-import { errorMessageFromResponse, FreeLLMModel, normalizeBaseUrl, parseModelList } from './apiUtils';
+import { DEFAULT_BASE_URL, errorMessageFromResponse, FreeLLMModel, normalizeBaseUrl, parseModelList } from './apiUtils';
 
 const API_KEY_SECRET = 'freellmapi.apiKey';
-const DEFAULT_BASE_URL = 'http://localhost:3001/v1';
 const MODEL_CACHE_MS = 60_000;
 
 interface OpenAIMessage {

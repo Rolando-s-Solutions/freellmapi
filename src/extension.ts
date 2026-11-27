@@ -1,9 +1,8 @@
 import * as vscode from 'vscode';
-import { normalizeBaseUrl } from './apiUtils';
+import { DEFAULT_BASE_URL, normalizeBaseUrl } from './apiUtils';
 import { FreeLLMAPIProvider } from './provider';
 
 const API_KEY_SECRET = 'freellmapi.apiKey';
-const DEFAULT_BASE_URL = 'http://localhost:3001/v1';
 
 export function activate(context: vscode.ExtensionContext): void {
 	const provider = new FreeLLMAPIProvider(context);
@@ -20,7 +19,7 @@ async function configureConnection(context: vscode.ExtensionContext, provider: F
 		title: 'Configure FreeLLMAPI',
 		prompt: 'Enter the FreeLLMAPI OpenAI-compatible base URL.',
 		value: currentUrl,
-		placeHolder: 'http://localhost:3001/v1',
+		placeHolder: DEFAULT_BASE_URL,
 		validateInput: value => {
 			try {
 				normalizeBaseUrl(value);
